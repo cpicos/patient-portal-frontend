@@ -1,20 +1,17 @@
 import type { ReactNode } from 'react';
-import { Badge, Button, Card, Group, SimpleGrid, Stack, Text, ThemeIcon, Title } from '@mantine/core';
+import { Badge, Card, Group, SimpleGrid, Stack, Text, ThemeIcon, Title } from '@mantine/core';
 import {
   IconCalendarEvent,
   IconChevronRight,
   IconHeartHandshake,
   IconMessageCircle,
 } from '@tabler/icons-react';
-import { Link } from 'react-router-dom';
-import { AppShellLayout } from '../../shared/layout/AppShellLayout';
 import { PageHeader } from '../../shared/components/PageHeader';
+import { PatientAppLayout } from '../PatientAppLayout';
 
 const patient = {
   appointmentDate: 'May 20, 2026 at 10:30 AM',
 };
-
-const dummySessionKey = 'patient-portal:dummy-session';
 
 const coverages = [
   { name: 'Medical Plan', status: 'Active', detail: 'Primary coverage' },
@@ -68,24 +65,8 @@ function DashboardCard({
 }
 
 export function DashboardPage() {
-  const handleSignOut = () => {
-    localStorage.removeItem(dummySessionKey);
-  };
-
   return (
-    <AppShellLayout
-      userMenu={
-        <Button
-          component={Link}
-          to="/auth/login"
-          variant="light"
-          color="brand"
-          onClick={handleSignOut}
-        >
-          Sign out
-        </Button>
-      }
-    >
+    <PatientAppLayout>
       <Stack gap="xl">
         <PageHeader
           title="Patient Dashboard"
@@ -158,6 +139,6 @@ export function DashboardPage() {
           </DashboardCard>
         </SimpleGrid>
       </Stack>
-    </AppShellLayout>
+    </PatientAppLayout>
   );
 }
