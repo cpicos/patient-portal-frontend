@@ -3,6 +3,7 @@ import { ForgotPasswordPage } from './auth/forgot-password';
 import { LoginPage } from './auth/login';
 import { MfaPage } from './auth/mfa';
 import { ResetPasswordPage } from './auth/reset-password';
+import { DashboardPage } from './patient/dashboard';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Route path="/auth/forgot-password" element={<ForgotPasswordPage />} />
       <Route path="/auth/mfa" element={<MfaPage />} />
       <Route path="/auth/reset-password" element={<ResetPasswordPage />} />
+      <Route path="/dashboard" element={<DashboardPage />} />
     </Routes>
   );
 }

@@ -73,7 +73,7 @@ export function LoginForm() {
       color: 'green',
     });
 
-    navigate('/auth/mfa');
+    navigate('/dashboard');
   };
 
   return (
