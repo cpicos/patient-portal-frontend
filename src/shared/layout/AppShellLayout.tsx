@@ -23,7 +23,7 @@ export function AppShellLayout({
   navbar,
   userMenu,
 }: AppShellLayoutProps) {
-  const [opened, { toggle }] = useDisclosure();
+  const [opened, { close, toggle }] = useDisclosure();
   const theme = useMantineTheme();
 
   return (
@@ -75,7 +75,7 @@ export function AppShellLayout({
       </AppShell.Header>
 
       {navbar ? (
-        <AppShell.Navbar p="md">
+        <AppShell.Navbar p="md" onClick={close}>
           <Stack gap="xs">{navbar}</Stack>
         </AppShell.Navbar>
       ) : null}

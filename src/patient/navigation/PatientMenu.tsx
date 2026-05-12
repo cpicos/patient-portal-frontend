@@ -1,6 +1,7 @@
 import { NavLink } from '@mantine/core';
 import {
   IconCalendarEvent,
+  IconLayoutDashboard,
   IconFileDescription,
   IconId,
   IconPill,
@@ -10,6 +11,11 @@ import {
 import { Link, useLocation } from 'react-router-dom';
 
 const menuItems = [
+  {
+    label: 'Dashboard',
+    to: '/dashboard',
+    icon: IconLayoutDashboard,
+  },
   {
     label: 'My Appointments',
     to: '/appointments',
