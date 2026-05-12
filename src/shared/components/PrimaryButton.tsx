@@ -1,7 +1,9 @@
 import type { ButtonProps } from '@mantine/core';
+import type { ComponentPropsWithoutRef } from 'react';
 import { Button } from '@mantine/core';
 
-export type PrimaryButtonProps = ButtonProps & {
+export type PrimaryButtonProps = ButtonProps &
+  ComponentPropsWithoutRef<'button'> & {
   label?: string;
 };
 
